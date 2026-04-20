@@ -24,7 +24,6 @@ def DashboardView(page, tarea_controller):
             )
         page.update()
 
-    # Formulario rápido
     txt_titulo = ft.TextField(label="Nueva Tarea", expand=True)
 
     def add_task(e):
