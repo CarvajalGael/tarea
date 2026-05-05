@@ -16,3 +16,7 @@ class TareaSchems(BaseModel):
     descripcion: Optional[str] = None
     prioridad: str = "media"
     clasificacion: str = "personal"   
+    
+class UsuarioAlta(BaseModel):
+    email: EmailStr
+    password: str = Field(min_length=8)
