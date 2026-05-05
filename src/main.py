@@ -11,12 +11,9 @@ def start(page: ft.Page):
     def route_change(e):
         page.views.clear()
 
-        # Caso 1: Login
         if page.route == "/":
-            page.add(ft.Text("Caso 1"))
             page.views.append(LoginView(page, auth_ctrl))
-
-        if page.route == "/dashboard":
+        elif page.route == "/dashboard":
             page.views.append(DashboardView(page, task_ctrl))
             
         if not page.views:
@@ -32,12 +29,9 @@ def start(page: ft.Page):
             page.go(top_view.route)
 
     page.on_route_change = route_change
-    page.on_view_pop = view_pop
+    page.go("/")
+    route_change(page.route)
     
-    if page.route == "/":
-        route_change(None)
-    else:
-        page.go("/")
 
 def main():
     ft.app(target=start)
