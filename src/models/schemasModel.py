@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
-from datetime import date, time
+from datetime import date, time, datetime
 
 class UsuariosSchema(BaseModel):
     nombre: str = Field(min_length=3, max_length=100)
