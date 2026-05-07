@@ -73,14 +73,12 @@ def RegistroView(page, auth_controller):
             page.update()
             return
 
-        success, mensaje = auth_controller.registrar_usuario(
-            nombre_input.value,
-            apellido_input.value,
-            email_input.value,
-            password_input.value,
-            telefono_input.value if telefono_input.value else None,
-            foto_input.value if foto_input.value else None
-        )
+        success, mensaje = auth_controller.register(
+    nombre_input.value,
+    apellido_input.value,
+    email_input.value,
+    password_input.value
+)
 
         if success:
             page.snack_bar = ft.SnackBar(

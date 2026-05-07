@@ -17,6 +17,7 @@ class AuthController:
 
         except Exception as e:
             return None, str(e)
+        
     def register(self, nombre, apellido, email, contra):
         print(contra)
         try:
