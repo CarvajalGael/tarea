@@ -87,7 +87,7 @@ def LoginView(page, auth_controller):
                     boton_login,
                     mensaje,
                     ft.TextButton(
-                        "Crear cuenta",
+                        "Crear una nueva cuenta",
                         on_click=lambda e: page.go("/registro")
                     ),
                 ],
